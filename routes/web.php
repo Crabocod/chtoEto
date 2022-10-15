@@ -33,5 +33,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin');
     Route::post('/add-song', [\App\Http\Controllers\AdminController::class, 'addSong']);
     Route::post('/save-song', [\App\Http\Controllers\AdminController::class, 'saveSong']);
+    Route::post('/delete-song', [\App\Http\Controllers\AdminController::class, 'deleteSong']);
     Route::get('/admin-all-songs', [\App\Http\Controllers\AdminController::class, 'allSongs'])->name('admin-all-songs');
 });

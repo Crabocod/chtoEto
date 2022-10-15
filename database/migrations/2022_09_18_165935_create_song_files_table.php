@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('song_files', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->unsignedInteger('song_id');
-            $table->foreign('song_id')->references('id')->on('songs');
+            $table->foreign('song_id')->references('id')->on('songs')->onDelete('cascade');
             $table->string('file');
             $table->timestamps();
         });

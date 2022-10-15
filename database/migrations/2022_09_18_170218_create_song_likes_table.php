@@ -17,8 +17,8 @@ return new class extends Migration
             $table->increments('id')->unsigned();
             $table->unsignedInteger('song_id');
             $table->unsignedInteger('user_id');
-            $table->foreign('song_id')->references('id')->on('songs');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('song_id')->references('id')->on('songs')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,5 +1,26 @@
 $(document).ready(function (){
 
+    $('.delete-song').on('click', function (e) {
+        e.preventDefault();
+        if (confirm('Are you sure?')) {
+            let data = {};
+            data['id'] = $(this).closest('tr').find('input[name=id]').val();
+            data['_token'] = $('input[name=_token]').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/delete-song',
+                data: data,
+                success: function (data) {
+                    alert('Song successfully deleted!');
+                },
+                error: function (data) {
+                    alert(data.responseJSON.message);
+                }
+            });
+        }
+    });
+
     $('.save-song').on('click', function (e) {
         e.preventDefault();
 

@@ -58,6 +58,7 @@ class AdminController extends Controller
         $validator = $r->validate([
             'audio' => 'max:10000',
             'title' => 'string',
+            'id' => 'required',
             'text' => 'string'
         ]);
 
@@ -76,6 +77,18 @@ class AdminController extends Controller
                 'file' => $path
             ]);
         }
+
+        return response()->json(['result' => 'success'], 200);
+    }
+
+    public function deleteSong(Request $r)
+    {
+
+        $validator = $r->validate([
+            'id' => 'required'
+        ]);
+
+        Songs::where('id', $r->id)->delete();
 
         return response()->json(['result' => 'success'], 200);
     }
