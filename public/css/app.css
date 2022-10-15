@@ -1,0 +1,42 @@
+.main-frame{
+    width: 100%;
+    height: 400px;
+    background-image: url("/img/main-bg.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    display: flex;
+    /* Центрируем по вертикали */
+    align-items: center;
+    /* Центрируем по горизонтали */
+    justify-content: center;
+}
+
+.main-block{
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+}
+
+.hello{
+    color: white;
+    font-weight: bold;
+}
+
+.userInfo{
+    font-weight: bold;
+}
+
+.song_item{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #a0aec0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.userName{
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+}
